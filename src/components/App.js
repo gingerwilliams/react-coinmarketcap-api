@@ -20,42 +20,18 @@ class App extends React.Component {
         // console.log(url);
 
         //const url = "https://api.coinmarketcap.com/v2/ticker/";
-        const url = "https://api.coinmarketcap.com/v1/ticker/";
+        const url = `https://api.coinmarketcap.com/v1/ticker/`;
 
-
-        axios
-            .get(url)
-            .then(
-                res => {
-                    //create an array from data
-                    const arr = res.data.map(coin =>{ 
-                        return {
-                            id: coin.id,
-                            name: coin.name
-                        };
-                    });
-
-                    // console.log(res.data)
-                    // console.log(arr)
-                    
-                    //New state variable
-                    const newState = Object.assign({}, this.state, {
-                        coins: arr
-                    });
-                    
-                    //Store the new state Variable
-                    this.setState(newState);
-                   
-                }
-               
-            )
-            
-        
+        fetch(url)
+            .then(res => res.json())
+            .then(json => this.setState({ coins: json }));
     }
     render(){
         return(
-            <div>{this.state.name}
+            <div>
                 <Coinlist coins={this.state.coins}/>
+
+                
             </div>
         )
         
