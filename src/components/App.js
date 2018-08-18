@@ -40,12 +40,7 @@ class App extends React.Component {
                 {console.log(this.state.coins)}
 
                 {/* on the main compenent you must pass the state to the compoenent with this.state */}
-                { 
-                    this.state.coins.map(coin => {
-
-                       return <p>{coin.name} - $ {coin.quote.USD.price}</p>
-                    })
-                }
+                <Coinlist coins={this.state.coins} />
             </div>
         )
     }
