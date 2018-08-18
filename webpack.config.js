@@ -40,6 +40,15 @@ module.exports = {
             cert: fs.readFileSync('ssl/server.crt'),
             ca: fs.readFileSync('ssl/rootCA.pem'),
         },
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8080',
+                    secure: false,
+                    changeOrigin: true,
+            }
+
+        }
+
         
         
     }

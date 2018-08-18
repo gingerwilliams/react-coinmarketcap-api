@@ -1,5 +1,5 @@
 import React from "react";
-import Coin from "./Coin";;
+import Coin from "./Coin";
 
 class Coinlist extends React.Component{
     render(){
