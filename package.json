@@ -9,9 +9,11 @@
     "build": "webpack --mode production"
   },
   "keywords": [
-    "PowerBi",
+    "coinmarketcap",
     "Webpack",
-    "React"
+    "React",
+    "API",
+    "cryptocurrency"
   ],
   "author": "Ginja the Ninja",
   "license": "ISC",
