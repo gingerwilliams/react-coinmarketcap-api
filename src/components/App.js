@@ -30,13 +30,15 @@ class App extends React.Component {
                 this.setState({ 
                     coins: json.data
                 })
-            )
+            ).catch((error) => {
+                console.error(error)
+            });
     }
     
     render(){
         return(
             <div>
-                <Header />
+                
                 {console.log(this.state.coins)}
 
                 {/* on the main compenent you must pass the state to the compoenent with this.state */}

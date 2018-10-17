@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Router from './components/Router';
 
 import "babel-polyfill";
 
 ReactDOM.render(
-    <App />,
+    <Router />,
     document.getElementById('root')
 );
