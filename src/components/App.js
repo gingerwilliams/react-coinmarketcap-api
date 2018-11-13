@@ -38,7 +38,7 @@ class App extends React.Component {
     render(){
         return(
             <div>
-                
+                <Header />
                 {console.log(this.state.coins)}
 
                 {/* on the main compenent you must pass the state to the compoenent with this.state */}

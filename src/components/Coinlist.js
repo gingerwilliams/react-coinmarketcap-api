@@ -4,8 +4,14 @@ import React from "react";
 class Coinlist extends React.Component{
 
     handleClick() {
-        // console.log('clicked', this);
-        this.props.coins.sort((a,b) => a.coin.quote.USD.percent_change_24h - b.coin.quote.USD.percent_change_24h)
+        console.log(coins);
+        
+        const newCoins = coins.map(coin => coin);
+
+        console.log(newCoins);
+
+        
+        // this.props.coins.sort((a,b) => a.coin.quote.USD.percent_change_24h - b.coin.quote.USD.percent_change_24h)
 
     }
 
