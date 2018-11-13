@@ -4,9 +4,9 @@ import React from "react";
 class Coinlist extends React.Component{
 
     handleClick() {
-        console.log(coins);
+        console.log(this.props);
         
-        const newCoins = coins.map(coin => coin);
+        const newCoins = this.props.coins.map(coin => coin);
 
         console.log(newCoins);
 
