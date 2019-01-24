@@ -14,15 +14,35 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                 }
+            },
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader'
+                }, {
+                    loader: 'less-loader'
+                }]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [{
+                    loader: 'file-loader'
+                }]
             }
         ]
     },
-   
+    devServer: {
+        open: true,
+        historyApiFallback: true
+
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./dist/index.html",
@@ -30,26 +50,7 @@ module.exports = {
             filename: "./index.html"
       })
     ],
-    devServer: {
-    
-        open: true,
-        
-        
-        https: {
-            key: fs.readFileSync('ssl/server.key'),
-            cert: fs.readFileSync('ssl/server.crt'),
-            ca: fs.readFileSync('ssl/rootCA.pem'),
-        },
-        proxy: {
-            '/api': {
-                target: 'http://localhost:8080',
-                    secure: false,
-                    changeOrigin: true,
-            }
-
-        }
-
-        
-        
+    resolve: {
+        extensions: ['.js', '.jsx']
     }
 };
