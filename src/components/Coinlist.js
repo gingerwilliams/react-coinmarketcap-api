@@ -1,4 +1,5 @@
 import React from "react";
+import Checkbox from './Checkbox';
 // import Coin from "./Coin";
 
 class Coinlist extends React.Component{
@@ -20,6 +21,7 @@ class Coinlist extends React.Component{
             <table style={{width:"100%", textAlign:"left"}}> 
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Rank</th>
                         <th>Name</th>
                         <th>Price</th>
@@ -31,6 +33,7 @@ class Coinlist extends React.Component{
                 {this.props.coins.map(coin => 
                     // <Coin name={coin.name} cmcrank={coin.cmc_rank} price={coin.quote.USD.price} pctChange24={coin.quote.USD.percent_change_24h} />
                     <tr>
+                        <Checkbox />
                         <td>{coin.name}</td>
                         <td>{coin.cmc_rank}</td>
                         <td>$ {coin.quote.USD.price}</td>

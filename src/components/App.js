@@ -13,14 +13,6 @@ class App extends React.Component {
         // this.getCoins = this.getCoins.bind();
     }
 
-    // create an arrow funciton so you dont have to bind it
-    // getFunc = (e) => {
-    //     const endpoint = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=';
-    //     const url = endpoint + API_KEY_CMC;
-    //     e.preventDefault()
-    //     console.log("got this function")
-    // }
-
     componentDidMount() {
         const url = `https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${API_KEY_CMC}`;
        
@@ -39,8 +31,6 @@ class App extends React.Component {
         return(
             <div>
                 <Header />
-                {console.log(this.state.coins)}
-
                 {/* on the main compenent you must pass the state to the compoenent with this.state */}
                 <Coinlist coins={this.state.coins} />
             </div>
