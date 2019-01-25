@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+// const HtmlWebPackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 const cors = require('cors');
 
@@ -40,16 +40,10 @@ module.exports = {
     },
     devServer: {
         open: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        contentBase: path.join(__dirname, 'dist')
 
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: "./dist/index.html",
-            inject: false,
-            filename: "./index.html"
-      })
-    ],
     resolve: {
         extensions: ['.js', '.jsx']
     }

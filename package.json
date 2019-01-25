@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development --hot --config ./webpack.config.js",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --config ./webpack.config.js",
+    "watch": "webpack  --mode development --watch --config ./webpack.config.js",
+    "serve": "webpack-dev-server --mode development --hot --open --config ./webpack.config.js"
   },
   "keywords": [
     "coinmarketcap",
