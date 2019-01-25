@@ -32,7 +32,9 @@ class App extends React.Component {
             <div>
                 <Header />
                 {/* on the main compenent you must pass the state to the compoenent with this.state */}
-                <Coinlist coins={this.state.coins} />
+                <Coinlist 
+                    coins={this.state.coins} 
+                />
             </div>
         )
     }

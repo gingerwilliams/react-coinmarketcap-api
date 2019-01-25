@@ -1,31 +1,21 @@
 import React from "react";
+import { Table } from 'react-bootstrap';
 import Checkbox from './Checkbox';
 // import Coin from "./Coin";
 
 class Coinlist extends React.Component{
 
-    handleClick() {
-        console.log(this.props);
-        
-        const newCoins = this.props.coins.map(coin => coin);
-
-        console.log(newCoins);
-
-        
-        // this.props.coins.sort((a,b) => a.coin.quote.USD.percent_change_24h - b.coin.quote.USD.percent_change_24h)
-
-    }
-
     render(){
         return(
-            <table style={{width:"100%", textAlign:"left"}}> 
+            <Table striped bordered condensed hover style={{width:"100%", textAlign:"left"}}> 
+            {console.log(this.props.coins)}
                 <thead>
                     <tr>
                         <th></th>
                         <th>Rank</th>
                         <th>Name</th>
                         <th>Price</th>
-                        <th onClick={this.handleClick}>24 Hour Change</th>
+                        <th>24 Hour Change</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,16 +23,16 @@ class Coinlist extends React.Component{
                 {this.props.coins.map(coin => 
                     // <Coin name={coin.name} cmcrank={coin.cmc_rank} price={coin.quote.USD.price} pctChange24={coin.quote.USD.percent_change_24h} />
                     <tr>
-                        <Checkbox />
-                        <td>{coin.name}</td>
+                        <td><Checkbox /></td>
                         <td>{coin.cmc_rank}</td>
-                        <td>$ {coin.quote.USD.price}</td>
-                        <td>{coin.quote.USD.percent_change_24h}</td>                    
+                        <td><a href={`/:${coin.id}`}>{coin.name}</a></td>
+                        <td>$ {coin.quote.USD.price.toFixed(2)}</td>
+                        <td>{coin.quote.USD.percent_change_24h.toFixed(2)} %</td>                    
                     </tr>
                     ) 
                 }
                 </tbody>
-            </table>
+            </Table>
         );
     }
 }
