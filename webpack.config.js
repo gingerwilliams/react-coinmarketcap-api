@@ -1,6 +1,7 @@
 const path = require('path');
+// var LiveReloadPlugin = require('webpack-livereload-plugin');
 // const HtmlWebPackPlugin = require('html-webpack-plugin');
-const fs = require('fs');
+// const fs = require('fs');
 const cors = require('cors');
 
 module.exports = {
@@ -47,4 +48,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     }
+    // plugins: [
+    //     new LiveReloadPlugin()
+    // ]
 };
